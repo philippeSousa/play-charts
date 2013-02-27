@@ -1,0 +1,10 @@
+#{extends 'main.html' /} #{set title:'Home' /}
+
+<div class="container">
+	<div class="well">
+		#{form @UploadController.uploadReport(),
+		enctype:'multipart/form-data'} <input type="text" name="title" /> <input
+			type="file" id="file" name="file" /> <input type="submit"
+			value="Send it" /> #{/}
+	</div>
+</div>
