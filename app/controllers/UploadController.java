@@ -18,8 +18,13 @@ public class UploadController extends Controller {
 			FileInputStream is = new FileInputStream(file);
 			// IOUtils.copy(is, new FileOutputStream(Play.getFile(fileName)));
 			IOUtils.copy(is, new FileOutputStream("./" + fileName));
-
-			GraphController.createGraphs();
+			/**
+			 * [{"name":"Pharmacy","type":1,"products":[{"name":"Advil","price":
+			 * 5},{"name":"Tylenol","price":6}]},{"name":"Medicine","type":1,
+			 * "products"
+			 * :[{"name":"Advil","price":5},{"name":"Tylenol","price":6}]}]
+			 */
+			Application.createGraphs();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
